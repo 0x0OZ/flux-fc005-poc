@@ -4,8 +4,8 @@ metadata:
   name: exfiltration-data
   namespace: default
 data:
-  leaked-length: "${#DB_PASSWORD}"
-  leaked-char-0: "${DB_PASSWORD:0:1}"
-  leaked-char-1: "${DB_PASSWORD:1:1}"
-  leaked-char-2: "${DB_PASSWORD:2:1}"
-  leaked-chunk: "${DB_PASSWORD:1:5}"
+  leaked-length: "str_${#DB_PASSWORD}"
+  leaked-char-0: "str_${DB_PASSWORD:0:1}"
+  leaked-char-1: "str_${DB_PASSWORD:1:1}"
+  leaked-char-2: "str_${DB_PASSWORD:2:1}"
+  leaked-chunk: "str_${DB_PASSWORD:1:5}"
